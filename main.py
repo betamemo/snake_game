@@ -31,11 +31,8 @@ while is_on:
     snake.move()
     if snake.head.distance(food) < 20:
         print('nom nom nom')
-
         scoreboard.add_score(10)  # increase scores
-
-        # extend snake
-
+        snake.extend_snake()  # extend snake
         food.food_pos()  # move food
 
     # the snake crashes the wall
@@ -44,5 +41,7 @@ while is_on:
         print('game over')
         scoreboard.game_over()
         is_on = False
+
+    # the snake crashes itself
 
 screen.mainloop()

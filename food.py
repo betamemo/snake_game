@@ -10,4 +10,4 @@ class Food(Turtle):
         self.food_pos()
 
     def food_pos(self):
-        self.goto(random.randint(-290, 290), random.randint(-290, 290))
+        self.goto(random.randint(-300, 300), random.randint(-300, 300))
