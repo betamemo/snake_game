@@ -47,6 +47,22 @@ class Snake:
         self.head.forward(20)
 
     def extend_snake(self):
-        p = self.segments[0]
-        new_snake = self.create_snake(p.pos())
+        s = self.segments[0]
+        new_snake = self.create_snake(s.pos())
         self.segments.insert(0, new_snake)
+
+    def is_crash(self):
+
+        # the snake crashes itself
+        for s in self.segments:
+            if s != self.head and self.head.pos() == s.pos():
+                print('crashes itself')
+                return True
+
+        # the snake crashes the wall
+        if (self.head.xcor() > 300 or self.head.xcor() < -300 or
+                self.head.ycor() > 300 or self.head.ycor() < -300):
+            print('crashes the wall')
+            return True
+
+        return False
