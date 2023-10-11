@@ -8,7 +8,7 @@ from snake import Snake
 # background
 screen = Screen()
 screen.screensize(300, 300, 'lightyellow')
-screen.addshape('img/apple.gif')
+screen.addshape('image/apple.gif')
 screen.listen()
 
 # scoreboard
