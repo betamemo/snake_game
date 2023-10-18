@@ -1,5 +1,5 @@
 import time
-from turtle import Screen, Turtle
+from turtle import Screen
 
 from food import Food
 from scoreboard import Scoreboard
@@ -9,17 +9,18 @@ from snake import Snake
 screen = Screen()
 screen.screensize(300, 300, 'lightyellow')
 screen.addshape('image/apple.gif')
-screen.listen()
+screen.tracer(0)
 
 # scoreboard
 scoreboard = Scoreboard()
 scoreboard.print_score()
 
-turtle = Turtle()
+# player
 snake = Snake()
 food = Food()
 
 # controller
+screen.listen()
 screen.onkeypress(fun=snake.go_up, key='Up')
 screen.onkeypress(fun=snake.go_down, key='Down')
 screen.onkeypress(fun=snake.go_left, key='Left')
@@ -27,6 +28,8 @@ screen.onkeypress(fun=snake.go_right, key='Right')
 
 is_on = True
 while is_on:
+
+    screen.update()
     time.sleep(0.1)  # snake's speed
     snake.move()
     if snake.head.distance(food) < 20:
@@ -41,4 +44,4 @@ while is_on:
         scoreboard.game_over()
         is_on = False
 
-screen.mainloop()
+screen.exitonclick()
