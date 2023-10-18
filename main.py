@@ -30,7 +30,7 @@ screen.onkeypress(fun=snake.go_right, key='Right')
 is_on = True
 while is_on:
     screen.update()
-    time.sleep(0.5)  # snake's speed
+    time.sleep(0.1)  # snake's speed
     snake.move()
     if snake.head.distance(food) < 15:
         print('nom nom nom')

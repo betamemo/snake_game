@@ -60,8 +60,8 @@ class Snake:
                 return True
 
         # the snake crashes the wall
-        if (self.head.xcor() > 300 or self.head.xcor() < -300 or
-                self.head.ycor() > 300 or self.head.ycor() < -300):
+        if (self.head.xcor() > 280 or self.head.xcor() < -280 or
+                self.head.ycor() > 280 or self.head.ycor() < -280):
             print('crashes the wall')
             return True
 
