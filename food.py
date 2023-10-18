@@ -5,7 +5,7 @@ from turtle import Turtle
 class Food(Turtle):
     def __init__(self):
         super().__init__()
-        self.shape('image/apple.gif')
+        self.shape('images/apple.gif')
         self.penup()
         self.food_pos()
 

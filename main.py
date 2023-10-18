@@ -9,7 +9,7 @@ from snake import Snake
 screen = Screen()
 screen.setup(600, 600)
 screen.bgcolor('lightyellow')
-screen.addshape('image/apple.gif')
+screen.addshape('images/apple.gif')
 screen.tracer(0)
 
 # scoreboard
