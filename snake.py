@@ -1,7 +1,6 @@
 from turtle import Turtle, Screen
 
 screen = Screen()
-turtle = Turtle()
 
 RIGHT = 0
 UP = 90
