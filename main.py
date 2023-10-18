@@ -7,7 +7,8 @@ from snake import Snake
 
 # background
 screen = Screen()
-screen.screensize(300, 300, 'lightyellow')
+screen.setup(600, 600)
+screen.bgcolor('lightyellow')
 screen.addshape('image/apple.gif')
 screen.tracer(0)
 
@@ -28,11 +29,10 @@ screen.onkeypress(fun=snake.go_right, key='Right')
 
 is_on = True
 while is_on:
-
     screen.update()
-    time.sleep(0.1)  # snake's speed
+    time.sleep(0.5)  # snake's speed
     snake.move()
-    if snake.head.distance(food) < 20:
+    if snake.head.distance(food) < 15:
         print('nom nom nom')
         scoreboard.add_score(10)  # increase score
         snake.extend_snake()  # extend snake
@@ -40,7 +40,6 @@ while is_on:
 
     # the snake crashes the wall or itself
     if snake.is_crash():
-        print('game over')
         scoreboard.game_over()
         is_on = False
 
